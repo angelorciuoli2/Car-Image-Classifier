@@ -21,17 +21,17 @@ When first creating and testing our models, we found bias in favor of SUVs or Pi
 
 
 
-3a. Model Development: Two Transfer Learning Models (VGG16)
+3. Model Development Part 1: Two Transfer Learning Models (VGG16)
 
 
 We utilized the VGG16 architecture, excluding the top layer to customize it for our specific needs, classifying among 5 car categories. The two VGG16 models were trained over seven epochs, incorporating a ReLU activation function for hidden layers and a softmax activation in the output layer, ideal for handling multiclass categorization. A particular benefit of VGG16 is that it has 1000 pre-trained classes in its model, two of them being ‘sports_car’ and ‘pickup.’ Our second VGG16 model extracts these two classes and decodes the class labels from the ImageNet dataset. Then, we use it to customize our model by reclassifying those into our Sports_Car and Pickup_Truck categories. This approach enables us to leverage the knowledge encoded within VGG16's pre-trained weights, adapting it specifically to our task of classifying car types, thus enhancing the model's performance and efficiency.
 
-3b. Model Development: Three More Sequential Models
+4. Model Development part 2: Three More Sequential Models
 
 Model 3 is a 15-layer model constructed including five sets of convolution and pooling layers, along with flattening, dropout, and dense layers. Each convolutional layer employed a ReLU activation function, transitioning to a softmax activation for the output layer. The pooling layers utilized a (2,2) pool size. Model 4 uses a simpler architecture with fewer convolutional layers and a single dropout layer for regularization, allowing us to gain insight on the tradeoff between accuracy and efficiency. Lastly, Model 5’s architecture is a deeper version of Model 3’s, by adding additional convolutional and pooling layers, resulting in a deeper and more complex network. This model also provided insight on accuracy and efficiency differences between models. 
 
 
-4. Model Compilation: 
+5. Model Compilation: 
 For all models, we used the Adam optimizer and the ‘sparse_categorical_crossentropy’ loss function. This setup ensured consistency in how the models were trained and evaluated against the validation data. We considered using ‘categorical_crossentropy’, which requires assignment of a binary sequence of length 5 to each image (zeros representing car categories an image does not belong to), but ultimately decided to stick with ‘sparse_categorical_crossentropy’ because our models’ accuracy was already quite high, with a low loss.
 
 
