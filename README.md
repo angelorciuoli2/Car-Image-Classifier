@@ -43,7 +43,9 @@ Model 3 is a 15-layer model constructed including five sets of convolution and p
 For all models, we used the Adam optimizer and the ‘sparse_categorical_crossentropy’ loss function. This setup ensured consistency in how the models were trained and evaluated against the validation data. We considered using ‘categorical_crossentropy’, which requires assignment of a binary sequence of length 5 to each image (zeros representing car categories an image does not belong to), but ultimately decided to stick with ‘sparse_categorical_crossentropy’ because our models’ accuracy was already quite high, with a low loss.
 
 
-6. Concluding Methodology 
+6. Concluding Methodology
+
+
 By carefully managing these steps, we strived to build a robust model that not only classifies car types with high accuracy but also explores the capabilities of CNNs in distinguishing complex features in automotive imagery.
 
 
