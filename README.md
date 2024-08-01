@@ -14,9 +14,15 @@ Artificial intelligence stands as one of the most transformative technologies in
 To develop our car type image classifier, our process involved several key steps: data collection, data augmentation, model building, and result interpretation. 
 
 
-1. Data Collection: 
+1. Data Collection 
+
+
 We sourced JPEG images of cars from Kaggle, an online database. These images, with dimensions of 180x180, were organized into subdirectories by car type. Our dataset included 1,493 images of SUVs, 726 of Sports Cars, 729 of Hatchbacks, 1,669 of Pick-up Trucks, and 1,222 of Sedans. Each image was labeled according to the subdirectory it was stored in, with paths saved to ensure they were correctly identified as JPEG files for training and testing purposes. We meticulously prepared the data, allocating 75% of the images in each category for training and 12.5% for validation and 12.5% for testing. 
+
+
 2. Data Augmentation 
+
+
 When first creating and testing our models, we found bias in favor of SUVs or Pickup Trucks and suspected it could be due to the difference in the number of images across the 5 different car types (Pickup Trucks and SUVs had more than double the number of images Hatchback and Sports Cars had). To accommodate for this, we implemented data augmentation to make up for the difference in input images. After augmenting the data, where we rotated and inverted pictures, each car type had somewhere between 1300 and 1330 images for training, 200 for validation, and 200 for testing. Although this is not equivalent to gathering more input data from external sources, implementing this data augmentation did increase our models’ accuracy.
 
 
@@ -31,7 +37,9 @@ We utilized the VGG16 architecture, excluding the top layer to customize it for 
 Model 3 is a 15-layer model constructed including five sets of convolution and pooling layers, along with flattening, dropout, and dense layers. Each convolutional layer employed a ReLU activation function, transitioning to a softmax activation for the output layer. The pooling layers utilized a (2,2) pool size. Model 4 uses a simpler architecture with fewer convolutional layers and a single dropout layer for regularization, allowing us to gain insight on the tradeoff between accuracy and efficiency. Lastly, Model 5’s architecture is a deeper version of Model 3’s, by adding additional convolutional and pooling layers, resulting in a deeper and more complex network. This model also provided insight on accuracy and efficiency differences between models. 
 
 
-5. Model Compilation: 
+5. Model Compilation 
+
+
 For all models, we used the Adam optimizer and the ‘sparse_categorical_crossentropy’ loss function. This setup ensured consistency in how the models were trained and evaluated against the validation data. We considered using ‘categorical_crossentropy’, which requires assignment of a binary sequence of length 5 to each image (zeros representing car categories an image does not belong to), but ultimately decided to stick with ‘sparse_categorical_crossentropy’ because our models’ accuracy was already quite high, with a low loss.
 
 
