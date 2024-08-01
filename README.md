@@ -17,7 +17,10 @@ To develop our car type image classifier, our process involved several key steps
 1. Data Collection: 
 We sourced JPEG images of cars from Kaggle, an online database. These images, with dimensions of 180x180, were organized into subdirectories by car type. Our dataset included 1,493 images of SUVs, 726 of Sports Cars, 729 of Hatchbacks, 1,669 of Pick-up Trucks, and 1,222 of Sedans. Each image was labeled according to the subdirectory it was stored in, with paths saved to ensure they were correctly identified as JPEG files for training and testing purposes. We meticulously prepared the data, allocating 75% of the images in each category for training and 12.5% for validation and 12.5% for testing. 
 2. Data Augmentation 
-When first creating and testing our models, we found bias in favor of SUVs or Pickup Trucks and suspected it could be due to the difference in the number of images across the 5 different car types (Pickup Trucks and SUVs had more than double the number of images Hatchback and Sports Cars had). To accommodate for this, we implemented data augmentation to make up for the difference in input images. After augmenting the data, where we rotated and inverted pictures, each car type had somewhere between 1300 and 1330 images for training, 200 for validation, and 200 for testing. Although this is not equivalent to gathering more input data from external sources, implementing this data augmentation did increase our models’ accuracy. 
+When first creating and testing our models, we found bias in favor of SUVs or Pickup Trucks and suspected it could be due to the difference in the number of images across the 5 different car types (Pickup Trucks and SUVs had more than double the number of images Hatchback and Sports Cars had). To accommodate for this, we implemented data augmentation to make up for the difference in input images. After augmenting the data, where we rotated and inverted pictures, each car type had somewhere between 1300 and 1330 images for training, 200 for validation, and 200 for testing. Although this is not equivalent to gathering more input data from external sources, implementing this data augmentation did increase our models’ accuracy.
+
+
+
 3a. Model Development: Two Transfer Learning Models (VGG16)
 
 
