@@ -8,8 +8,12 @@ Artificial intelligence stands as one of the most transformative technologies in
 
 
 
-Methodology 
+### Methodology 
+
+
 To develop our car type image classifier, our process involved several key steps: data collection, data augmentation, model building, and result interpretation. 
+
+
 1. Data Collection: 
 We sourced JPEG images of cars from Kaggle, an online database. These images, with dimensions of 180x180, were organized into subdirectories by car type. Our dataset included 1,493 images of SUVs, 726 of Sports Cars, 729 of Hatchbacks, 1,669 of Pick-up Trucks, and 1,222 of Sedans. Each image was labeled according to the subdirectory it was stored in, with paths saved to ensure they were correctly identified as JPEG files for training and testing purposes. We meticulously prepared the data, allocating 75% of the images in each category for training and 12.5% for validation and 12.5% for testing. 
 2. Data Augmentation 
