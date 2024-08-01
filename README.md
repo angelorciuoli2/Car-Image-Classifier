@@ -1,4 +1,4 @@
-# Car-Image-Classifier
+# Car Image Classifier
 
 ### Introduction 
 
